@@ -1,0 +1,44 @@
+npm init -y
+npm install express
+
+server.js
+const express = require("express");
+const path = require("path");
+
+const app = express();
+const PORT = 3000;
+
+// Serve static files
+app.use(express.static(path.join(__dirname, "public")));
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
+
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Static Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to My Node.js Website 🚀</h1>
+    <p>This site is served using Express.js</p>
+</body>
+</html>
+
+style.css
+body {
+    text-align: center;
+    font-family: Arial;
+    background-color: #f0f0f0;
+}
+h1 {
+    color: blue;
+}
+
+node server.js
+
+http://localhost:3000
+
