@@ -1,0 +1,115 @@
+2. Setup Project
+npm init -y
+npm install express mongoose body-parser cors
+⚙️ 3. server.js (Complete Code)
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
+const app = express();
+const PORT = 3000;
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+// MongoDB Connection
+mongoose.connect("mongodb://127.0.0.1:27017/userDB", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log(err));
+
+// Schema
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    age: Number
+});
+
+// Model
+const User = mongoose.model("User", userSchema);
+
+
+// 🟢 CREATE (POST)
+app.post("/users", async (req, res) => {
+    try {
+        const newUser = new User(req.body);
+        const savedUser = await newUser.save();
+        res.json(savedUser);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+// 🔵 READ (GET)
+app.get("/users", async (req, res) => {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+// 🟡 UPDATE (PUT)
+app.put("/users/:id", async (req, res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
+        );
+        res.json(updatedUser);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+// 🔴 DELETE (DELETE)
+app.delete("/users/:id", async (req, res) => {
+    try {
+        await User.findByIdAndDelete(req.params.id);
+        res.json({ message: "User deleted successfully" });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+// Start Server
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
+▶️ 4. Run the Application
+Start MongoDB
+mongod
+Run server
+node server.js
+🧪 5. Test APIs (Very Important for Viva)
+
+Use Postman or browser
+
+✅ CREATE (POST)
+POST http://localhost:3000/users
+
+{
+  "name": "Shara",
+  "email": "shara@gmail.com",
+  "age": 20
+}
+✅ READ (GET)
+GET http://localhost:3000/users
+✅ UPDATE (PUT)
+PUT http://localhost:3000/users/<id>
+
+{
+  "name": "Updated Name"
+}
+✅ DELETE (DELETE)
+DELETE http://localhost:3000/users/<id>
