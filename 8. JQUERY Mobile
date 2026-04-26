@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FasCave Website</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style>
+        body {
+            font-family: Arial;
+        }
+        .title {
+            text-align: center;
+            color: #5a5abf;
+        }
+  .box {
+            background: #f2f2f2;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+     .highlight {
+            background: #e0e0e0;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div data-role="page" id="home">
+    <div data-role="header">
+        <h1>FasCave</h1>
+    </div>
+    <div data-role="content">
+ <h1 class="title">Company Website</h1>
+        <h3 style="text-align:center;">Company Information Table</h3>
+        <div class="box">
+            <p><b>Company:</b> FasCave</p>
+            <p><b>Department:</b> Technology & Development</p>
+            <p><b>Domain:</b> 
+                <a href="https://fascave.com/" target="_blank">
+                    https://fascave.com/
+                </a>
+            </p>
+        </div>
+        <p style="text-align:center;">Innovation • Creativity • Growth</p>
+        <a href="#about" class="ui-btn ui-btn-b ui-corner-all">
+            Go to About Page
+        </a>
+    </div>
+</div>
+<div data-role="page" id="about">
+    <div data-role="header">
+        <h1>About FasCave</h1>
+    </div>
+    <div data-role="content">
+        <div class="box">
+            <h3>About the Company</h3>
+            <p>
+                FasCave is a modern digital platform focused on innovation and 
+                creative solutions. It provides services and ideas that help 
+                businesses grow in the digital world.
+            </p>
+
+            <p>
+                The company focuses on technology-driven development, user-friendly 
+                design, and scalable solutions for future growth.
+            </p>
+        </div>
+        <div class="box">
+            <h3>Our Mission</h3>
+            <p>
+                To build efficient, scalable, and innovative digital products 
+                that solve real-world problems.
+            </p>
+        </div>
+        <div class="box">
+            <h3>Our Vision</h3>
+            <p>
+                To become a leading platform in digital innovation and 
+                technology solutions.
+            </p>
+        </div>
+        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">
+            Back to Home
+        </a>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+ 
+ 
+
