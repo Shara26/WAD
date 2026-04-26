@@ -1,0 +1,32 @@
+Admin@Sneha MINGW64 ~/OneDrive/Desktop/WAD prac 3 (main)
+git init
+Reinitialized existing Git repository in C:/Users/Admin/OneDrive/Desktop/WAD prac
+.git/
+Admin@Sneha MINGW64~/OneDrive/Desktop/WAD prac 3 (main)
+$ git add
+Admin@Sneha MINGW64~/OneDrive/Desktop/WAD prac 3 (main)
+$ git commit -m "Initial commit"
+[main (root-commit) 98ede72] Initial commit
+2 files changed, 253 insertions (+)
+create mode 100644 index.html
+create mode 100644 style.css
+Admin@Sneha MINGW64 ~/OneDrive/Desktop/WAD prac 3 (main)
+$ https://github.com/Sne236/web-prac-3.git
+bash: https://github.com/Sne236/web-prac-3.git: No such file or directory
+Admin@Sneha MINGW64~/OneDrive/Desktop/WAD prac 3 (main)
+git remote add origin https://github.com/Sne236/web-prac-3.git
+error: remote origin already exists.
+Admin@Sneha MINGW64 ~/OneDrive/Desktop/WAD prac 3 (main)
+$ git remote remove origin
+Admin@Sneha MINGW64~/OneDrive/Desktop/WAD prac 3 (main) $ git remote -v
+Admin@Sneha MINGW64~/OneDrive/Desktop/WAD prac 3 (main)
+$ git remote add origin https://github.com/Sne236/web-prac-3.git
+Admin@Sneha MINGW64 ~/OneDrive/Desktop/WAD prac 3 (main)
+$ git branch -M main
+git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 2.12 кіB | 2.12 MiB/s, done.
